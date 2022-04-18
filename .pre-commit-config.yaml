@@ -1,0 +1,51 @@
+fail_fast: true
+repos:
+  - repo: local
+    hooks:
+      - id: black
+        name: Black
+        entry: poetry run black --config .black.toml --check .
+        pass_filenames: false
+        language: system
+  - repo: local
+    hooks:
+      - id: isort
+        name: isort
+        entry: poetry run isort --check .
+        pass_filenames: false
+        language: system
+  - repo: local
+    hooks:
+      - id: pydocstyle
+        name: pydocstyle
+        entry: poetry run pydocstyle .
+        pass_filenames: false
+        language: system
+  - repo: local
+    hooks:
+      - id: mypy
+        name: MyPy
+        entry: poetry run mypy .
+        pass_filenames: false
+        language: system
+  - repo: local
+    hooks:
+      - id: flake8
+        name: Flake8
+        entry: poetry run flake8 .
+        pass_filenames: false
+        language: system
+  - repo: local
+    hooks:
+      - id: bandit
+        name: Bandit
+        entry: poetry run bandit -r -c .bandit.yml .
+        pass_filenames: false
+        language: system
+  - repo: local
+    hooks:
+      - id: unittest
+        name: Tests
+        entry: poetry run python3 -m unittest -b
+        pass_filenames: false
+        language: system

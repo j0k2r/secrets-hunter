@@ -1,0 +1,12 @@
+[tool.black]
+line-length = 79
+target-version = [
+	'py36',
+	'py37',
+	'py38',
+	'py39'
+]
+
+# Skipping block formating:
+# - "# fmt: off" disables formatting for all following lines
+# until formatting is activated again with "# fmt: on".

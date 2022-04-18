@@ -1,0 +1,34 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "secrets-hunter"
+version = "0"
+description = "A simple code base secrets scanner"
+authors = ["Hamza Z. <hello@hamzazerhouni.me>"]
+license = "GPL-3.0-only"
+readme = "Readme.md"
+# Exclude tests directories from the python build
+exclude = ["**/tests/**"]
+
+# Plugin to automatically set the package version from __init__.py
+[tool.poetry-version-plugin]
+source = "init"
+
+[tool.poetry.dependencies]
+python = ">=3.7,<4.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.9.2"
+mypy = "^0.910"
+pydocstyle = "^6.1.1"
+isort = "^5.9.2"
+flake8-fixme = "^1.1.1"
+flake8-ensure-ascii = "^1.0.0"
+bandit = "^1.7.0"
+flake8-sfs = "^0.0.3"
+pre-commit = "^2.17.0"
+black = "^22.3.0"
+flake8-print = "^4.0.0"
+coverage = "^6.3.2"

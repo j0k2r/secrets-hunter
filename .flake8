@@ -1,0 +1,51 @@
+[flake8]
+# Select the formatter used to display errors to the user
+format = default
+# Print the source code generating the error/warning in question
+show-source = True
+# Count the number of occurrences of each error/warning code and print a report
+statistics = False
+# Enable PyFlakes syntax checking of doctests in docstrings
+doctests = True
+# Set the maximum allowed McCabe complexity value for a block of code
+max-complexity = 15
+# Set the maximum length that any line
+max-line-length = 79
+# Set the number of spaces used for indentation
+indent-size = 4
+
+# strings are in double quotes
+inline-quotes = double
+
+# Specify a list of codes to ignore
+ignore =
+    # line break before binary operator
+    W503,
+    # line break after binary operator
+    W504,
+
+
+extend-ignore =
+    # Ignore TODO keys
+    T101,
+    # Use str.format method to format strings
+    SFS201
+
+# Excluding some directories:
+exclude =
+    .git
+    __pycache__
+    .venv
+    .eggs
+    *.egg
+    .venv
+    .vscode
+
+# Ignoring some errors in some files:
+per-file-ignores =
+  # Enable `assert` keyword and magic numbers for tests:
+  tests/*.py: S101, WPS226, WPS432
+
+# Skipping checks:
+# - "# noqa" skips all checks.
+# - "# noqa: E731,E123" can be used to skip specific checks.
