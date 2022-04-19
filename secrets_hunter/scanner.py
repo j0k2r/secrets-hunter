@@ -75,24 +75,30 @@ class Scanner(threading.Thread):
         if matched_rule is not None:
             self.__add_discovery(file_path, 0, file_extension, matched_rule)
 
-            # Extension matched no need to check for other rules
-            return
+            if matched_rule[5] == "error":
+                # Extension matched with error level
+                # no need to check for other rules
+                return
 
         # Check for file name match
         matched_rule = self.__scan_file_name(file_name)
         if matched_rule is not None:
             self.__add_discovery(file_path, 0, file_name, matched_rule)
 
-            # File name matched no need to check for other rules
-            return
+            if matched_rule[5] == "error":
+                # File name matched with error level
+                # no need to check for other rules
+                return
 
         # Check for file path match
         matched_rule = self.__scan_file_path(file_path)
         if matched_rule is not None:
             self.__add_discovery(file_path, 0, file_path, matched_rule)
 
-            # File path matched no need to check for other rules
-            return
+            if matched_rule[5] == "error":
+                # File path matched with error level
+                # no need to check for other rules
+                return
 
         # Check for file content match
         try:
