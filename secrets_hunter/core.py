@@ -51,14 +51,14 @@ def run(
     gitignore_parser = GitignoreParser(target)
 
     # Target sub directories queue (directories to index)
-    directories_queue: Queue[str] = Queue()
+    directories_queue: "Queue[str]" = Queue()
     directories_queue.put(target)
 
     # Target sub files queue (indexed files ready for scanning)
-    files_queue: Queue[str] = Queue()
+    files_queue: "Queue[str]" = Queue()
 
     # Scan discoveries queue
-    discoveries_queue: Queue[Tuple[str, int, str, str, str, str]] = Queue()
+    discoveries_queue: "Queue[Tuple[str, int, str, str, str, str]]" = Queue()
 
     # Index the target directory files and skip the excluded ones
 
@@ -140,7 +140,7 @@ def run(
 
 
 def dump_discoveries(
-    discoveries_queue: Queue[Tuple[str, int, str, str, str, str]],
+    discoveries_queue: "Queue[Tuple[str, int, str, str, str, str]]",
     output_format: str,
     output_path: str,
 ) -> None:

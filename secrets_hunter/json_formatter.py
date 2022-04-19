@@ -9,7 +9,7 @@ from queue import Queue
 
 
 def dump(
-    discoveries_queue: Queue[Tuple[str, int, str, str, str, str]],
+    discoveries_queue: "Queue[Tuple[str, int, str, str, str, str]]",
     fd: TextIO = sys.stdout,
 ) -> None:
     """Dump the discoveries into the `fd` file descriptor.

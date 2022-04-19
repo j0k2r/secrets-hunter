@@ -20,9 +20,9 @@ class Scanner(threading.Thread):
 
     def __init__(
         self,
-        files_queue: Queue[str],
+        files_queue: "Queue[str]",
         rules: RulesParser,
-        discoveries_queue: Queue[Tuple[str, int, str, str, str, str]],
+        discoveries_queue: "Queue[Tuple[str, int, str, str, str, str]]",
         stop_event: threading.Event,
     ) -> None:
         """Initialize the scanner worker thread.
@@ -35,7 +35,7 @@ class Scanner(threading.Thread):
             stop_event (threading.Event): Thread stop event.
         """
 
-        self.files_queue: Queue[str] = files_queue
+        self.files_queue: "Queue[str]" = files_queue
         self.rules = rules
         self.stop_event = stop_event
         self.discoveries_queue = discoveries_queue

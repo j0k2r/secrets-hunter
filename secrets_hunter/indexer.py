@@ -15,8 +15,8 @@ class Indexer(threading.Thread):
 
     def __init__(
         self,
-        directories_queue: Queue[str],
-        files_queue: Queue[str],
+        directories_queue: "Queue[str]",
+        files_queue: "Queue[str]",
         rules: RulesParser,
         gitignore_parser: GitignoreParser,
         stop_event: threading.Event,
@@ -32,8 +32,8 @@ class Indexer(threading.Thread):
             stop_event (threading.Event): Thread stop event.
         """
 
-        self.directories_queue: Queue[str] = directories_queue
-        self.files_queue: Queue[str] = files_queue
+        self.directories_queue: "Queue[str]" = directories_queue
+        self.files_queue: "Queue[str]" = files_queue
         self.rules = rules
         self.gitignore_parser = gitignore_parser
         self.stop_event = stop_event
