@@ -146,4 +146,5 @@ $ poetry run pre-commit run --all-files
 * [Gitleaks](https://github.com/zricethezav/gitleaks)
 * [SecretScanner](https://github.com/deepfence/SecretScanner)
 * [shhgit](https://github.com/eth0izzle/shhgit)
+* [TruffleHog](https://github.com/trufflesecurity/trufflehog)
 * [Whispers](https://github.com/Skyscanner/whispers)
